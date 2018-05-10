@@ -1,0 +1,43 @@
+@charset "UTF-8";
+
+.smiley-icon, .smiley-tab-content li.selected, .smiley-tab-content li.hover { background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAE4AAABACAYAAAC0oEFtAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyJpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoV2luZG93cykiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6QzZCMENCMDYyOEYyMTFFOEE4OUJDNEIxRjIzMTYxOEYiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6QzZCMENCMDcyOEYyMTFFOEE4OUJDNEIxRjIzMTYxOEYiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDpDNkIwQ0IwNDI4RjIxMUU4QTg5QkM0QjFGMjMxNjE4RiIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDpDNkIwQ0IwNTI4RjIxMUU4QTg5QkM0QjFGMjMxNjE4RiIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PnEkzgcAAAMrSURBVHja7JrLrhoxDEAzESAWZdkFIAHqL/ADfHglvoBNd2XHS3THAqk8JEhlpKCQO488nGRmaksj5g4Q2yeO7YSbMUM5HA5iPB5nDFGWy6WA18FgwObzufM4q9WKnc/n1/1isUC1sUgyU2jyHhOeOu7xeHSCB9CGw+H779FoFAUcN3UOHNOdxRRwHiD4QIspmSk0iAbVUOxlq+uygabaIoRIC67IkTrAK7MhKbgqB1LCq9KdDBzGrIeCZ6IzCTisPBMCnqmuaOD0KmnbFuRVNiyIKjzTCYoFjvtAA4HPy1YFWySkUFHtI531es18u3e5lGT3jg0vxK7Fe6nebjeRZdmXUIdn3W63Vsaayv1+F9IH1R+47/V6KD5xdXD5ut1uWdNlv99/gYaa41RooGC32zE1Apsqz+fz5ct7aSH7xNWBN5sNa4tIUCo8VHCgAK42LM+81gSuEAHxijgYWC5VqSxWPxQr+qSPqDluOp1+KJFXmyJvNpuh+vTOcQCvTVEmV5D0LchSlcAmk0lrwHHOP3xCb0fUPgdeQVEbIg98UKFhp54Mumy1MIToslPuHFRwmD51oFE8nU6vhjEn0kRehdJBF1Uy/X3TZ1VjFX2nbCzlPeFrzwscQAPp9/vRK6nvVsh0Ei3BmuW4x+MB4Zuk/fDNpfoe2/Tz0te8ww3rnQMGuKb0frbAKzf5oSIoD2gdIJfZUGUfT7UkU7Q8OowyG6rs4yFmPkU0mehE3auGAGBjoK4DW2eoSeRqpbEJ5bpW2lg+cFWB3mTGmL2qJtp2RST5eTBGQreBX6Uv5Z6aN20p1qHIfFRVrCSNmaB9bXD5vunEFjbArpHhm3cwJwzzOEkfh7sUgbL3MTbtGIUDe9L0cbhLETA9iSh6VmRg0VGRDxCbwLA6HQnVdpRNiI2BWCco2AWK12Uf2bQTF6+9agynXCYxRhXn8tegJvZkGLnKuZBcr1dxuVyMz95D/OePS8VNLZ2fv87s958nI7HMcbuTIAou4P7eCFwjNvkEjsCREDgCR+AIHAmBI3AEjsAROBICR+AIHIH7n8F962dEwQXcj+8UdC7yT4ABAE+5aA8v3YU+AAAAAElFTkSuQmCC"); background-repeat: no-repeat; overflow: hidden;}
+.smiley-dialog-container { display: block; z-index: 999; top: 29px; right: 0px; position: absolute; background: #e5e5e5; padding: 2px; }
+.smiley-dialog-container .smiley-popup-caret { position: absolute; top: -8px; right: 75px; width: 21px; height: 11px; background-position: left top; }
+.smiley-dialog-container .smiley-dropdown-panel { border: 1px solid #bfbfbf; background-color: #fff; }
+.smiley-dropdown-panel .smiley-container { width: 550px; }
+
+/*主图*/
+.smiley-container .smiley-content { padding: 5px 3px 0 5px; height: 276px; }
+
+.smiley-content .smiley-scroll-panel { position: relative; }
+.smiley-scroll-panel .smiley-panel-content { height: 277px; overflow: hidden; /*position: relative; */}
+.smiley-panel-content .smiley-layer-table { border-collapse: collapse; border-spacing: 0; border: 0; /*position: absolute;*/}
+.smiley-panel-content td { width: 54px; height: 54px; background: #ffffff; border: 1px solid #e3e3e3; text-align: -webkit-center; vertical-align: middle; border-collapse: collapse; }
+.smiley-panel-content td .smiley-img { background: transparent url(../images/tieba_face.png) no-repeat scroll left top; width: 30px; height: 30px; display:block; color:#000; font-size:14px; text-decoration:none; }
+ 
+/*面板滚动条*/
+.smiley-scroll-panel .smiley-scroll-bar { position: absolute; top: 0; right: 0; width: 10px; background: #F2F2F2; height: 100%; }
+.smiley-scroll-panel .smiley-scroll-draggable { position: absolute; left: 0; top: 0; width: 8px; background: #FFF; border: 1px solid #E0E0E0; cursor: default; }
+
+/*滚动条样式*/
+body::-webkit-scrollbar { margin-left: 1px; width: 10px; height: 100%; }
+/*滚动条里面小方块*/
+body::-webkit-scrollbar-thumb { background: #FFF; border: 1px solid #E0E0E0;}
+/*滚动条里面轨道*/
+body::-webkit-scrollbar-track { background: #F2F2F2; height: 100%; }
+
+
+/*按钮*/
+.smiley-container .smiley-tab-container { height: 31px; border-top: 1px solid #e3e3e3; background-color: #f7f7f7; color: #666; position: relative; }
+.smiley-tab-container .prev { position: absolute; left: 10px; width: 7px; height: 11px; top: 10px; cursor: pointer; background-position: left -11px; }
+.smiley-tab-container .smiley-tab-panel { position: absolute; width: 502px; height: 29px; overflow: hidden; left: 24px; top: 0; }
+.smiley-tab-container .next { position: absolute; right: 10px; width: 7px; height: 11px; top: 10px; cursor: pointer; background-position: right -11px; }
+.smiley-tab-panel .smiley-tab-content { width: 1500px; padding-top: 5px; position: relative; }
+.smiley-tab-content .smiley-tab-btn { cursor: pointer; float: left; height: 21px; line-height: 21px; margin-right: 4px; border-top: 0; margin-top: 0; padding: 0; }
+.smiley-tab-btn .tab-txt { padding: 0 10px; display: block; }
+.smiley-tab-content li.selected { background-position: left  -43px; color: #fff; }
+.smiley-tab-content li.hover{ background-position: left -22px;}
+
+/*表情阅览*/
+.smiley-container .smiley-preview { position: absolute; left: 478px; top: 3px; bottom: 200px; z-index: 65533; width: 60px; height: 60px; border: 1px solid #000; overflow: hidden; background: #FFF; display: none; }
+.smiley-preview img.review { position: absolute; background: #FFF; vertical-align: middle; }
