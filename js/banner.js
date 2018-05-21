@@ -61,7 +61,7 @@ function setHeader() {
             headerCard.style.height = 300 + 'px';
         } else {
             headerCard.style.height = windowHeight + 'px';
-            seeMore.setAttribute('data-scroll-to', windowHeight);
+            seeMore.setAttribute('data-scroll-to', windowHeight.toString());
         }
 
         var imgWidth = headerMedia.offsetWidth;
@@ -94,38 +94,29 @@ function setHeader() {
         }
     }
     function setSiteNavBarBg(){
-        var scrollT = document.documentElement.scrollTop || document.body.scrollTop;
-        var transparency = scrollT / parseInt(seeMore.getAttribute('data-scroll-to'));
-        if (scrollT >= parseInt(seeMore.getAttribute('data-scroll-to'))) {
+        var scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+        var scrollGo = parseInt(seeMore.getAttribute('data-scroll-to'));
+        var transparency = scrollTop / scrollGo;
+        if (scrollTop >= scrollGo) {
             siteNavBar.style.backgroundColor = 'rgba(0, 0, 0, 1)';
         }else {
             transparency.toFixed(1) > 0.6 ? siteNavBar.style.backgroundColor='rgba(0, 0, 0,'+transparency.toFixed(1)+')': '';
-            seeMore.setAttribute('data-scroll-go', scrollT);
         }
     }
     function more(){
-        var iScrollGo = parseInt(seeMore.getAttribute('data-scroll-go'));
-        var iAson     = 1;
-        var iTarget   = parseInt(seeMore.getAttribute('data-scroll-to')) - siteNavBar.offsetHeight;
-
+        var iTarget   = parseInt(seeMore.getAttribute('data-scroll-to') - siteNavBar.offsetHeight);
         timer = setInterval(function(){
-            var iScrollTop = (iScrollGo !== 0 && iAson === 1) ? iScrollGo :
-                (document.body.scrollTop || document.documentElement.scrollTop);
-
-            var iSpeed= (iTarget-iScrollTop)/8;
-
+            var iScrollTop = (document.body.scrollTop || document.documentElement.scrollTop);
+            var iSpeed= (iTarget-iScrollTop)/10;
             iSpeed = iSpeed > 0 ? Math.ceil(iSpeed) : Math.floor(iSpeed);
-
             iScrollTop = iSpeed + iScrollTop;
-
             if(iScrollTop >= iTarget){
                 clearInterval(timer);
                 document.documentElement.scrollTop = document.body.scrollTop = iTarget;
             } else {
                 document.documentElement.scrollTop = document.body.scrollTop = iScrollTop;
             }
-        }, 20);
-        iAson++;
+        }, 10);
     }
 
     setBanner();
@@ -174,18 +165,20 @@ function mobiNav() {
             page.style.left = '50%';
             body.style.overflow= "hidden";
             body.style.height= "100%";
-            Ospan.setAttribute('aria-hidden',false);
+            Ospan.setAttribute('aria-hidden', 'false');
             sideBar.style.left = 0;
+            sideBar.style.transform = 'translate(0)';
             dis.style.display='block';
             ModalHelper.afterOpen();
             // navTrigger.setAttribute('class',navTrigger.getAttribute('class') + ' expanded');
             addClass(navTrigger, 'expanded');
         } else {
-            Ospan.setAttribute('aria-hidden',true);
+            Ospan.setAttribute('aria-hidden','true');
             page.style.left = 0;
             body.style.overflow= "auto";
             body.style.height= "auto";
-            sideBar.style.left= -50+'%';
+            // sideBar.style.left= -50+'%';
+            sideBar.style.transform = 'translate(-100%)';
             dis.style.display='none';
             // navTrigger.setAttribute('class', 'side-nav-trigger');
             removeClass(navTrigger, 'expanded');
@@ -197,7 +190,7 @@ function mobiNav() {
 
     document.getElementById('dis').onclick = function(e){
         if (Ospan.getAttribute('aria-hidden') === 'false'){
-            Ospan.setAttribute('aria-hidden',true);
+            Ospan.setAttribute('aria-hidden','true');
             page.style.left = 0;
             body.style.overflow= "auto";
             body.style.height= "auto";
@@ -234,6 +227,8 @@ function setTagsCloud() {
     aA=oDiv.getElementsByTagName('a');
     for(var i=0; i<aA.length; i++) {
         oTag={};
+        aA[i].style.position = 'absolute';
+        aA[i].style.color = '#fff';
         aA[i].onmouseover = (function (obj) {
             return function () {
                 obj.on = true;
@@ -297,7 +292,7 @@ function setTagsCloud() {
             mcList[i].cy = ry3;
             mcList[i].cz = rz3;
 
-            per = d / (d + rz3);
+            var per = d / (d + rz3);
 
             mcList[i].x = (howElliptical * rx3 * per) - (howElliptical * 2);
             mcList[i].y = ry3 * per;
