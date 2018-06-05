@@ -4,7 +4,7 @@
     width:80%;
     margin:0 auto;
     text-align:left;
-    max-width:1100px;
+    max-width:1200px;
 }
 
 #page {
@@ -18,12 +18,15 @@
     transition:left 0.5s;
 }
 
-#header {position: relative;}
+#header {
+    position: relative;
+}
 
 /* ------------------ Header ------------------ */
 #header > .header-card-wrapper {
-    overflow: hidden;
     background: #666666;
+    height: auto;
+    overflow: hidden;
 }
 .header-card-wrapper > .header-card {
     z-index:1;
@@ -31,6 +34,7 @@
     display:table;
     text-align:center;
     position:relative;
+    overflow: hidden;
 }
 .header-card > .header-media {
     position:absolute;
@@ -130,6 +134,7 @@
     display: block;
 }
 .site-meta > .see-more:hover {
+    background:#999;
     background:rgba(0,0,0,0.1);
     border-color:#fff;
     color:#fff
@@ -230,8 +235,8 @@
     z-index:999999;
     top:15px;
     right:15px;
-    height:26px;
-    width:26px;
+    height:25px;
+    width:25px;
     overflow:hidden;
     white-space:nowrap;
     color:transparent !important;
@@ -311,24 +316,22 @@
 
 #sideBar.side-menu-wrapper {
     position:fixed;
-    /*top:0;*/
-    /*bottom:0;*/
-    /*left:-50%;*/
+    top:0;
+    bottom:0;
+    left:-50%;
     height:100%;
     width:50%;
     z-index:999;
-    background: #fff;
-    -webkit-transition:all 500ms ease;
-    -moz-transition:all 500ms ease;
-    -o-transition:all 500ms ease;
-    transition:all 500ms ease;
-    transform:translate(-100%);
-    touch-action: none;
+    -webkit-transition:left 0.5s;
+    -moz-transition:left 0.5s;
+    -o-transition:left 0.5s;
+    transition:left 0.5s;
 }
 .side-menu-wrapper > .menu-content {
     width: 100%;
     height:100%;
     overflow-y:scroll;
+    background: #fff;
 }
 .menu-content > ul {
     padding:20px;
@@ -418,7 +421,7 @@
     color:#777;
 }
 .breadcrumb a {
-    color:#337ab7;
+    color:#428BCA;
     text-decoration:none;
 }
 .breadcrumb a:hover {
@@ -466,6 +469,7 @@
 }
 .entry-meta  a, .entry-description a {
     color:#428BCA;
+    font-size: 12px;
 }
 .entry-meta  a:hover, .entry-description a:hover {
     color:#2A6496;
@@ -539,33 +543,42 @@
 }
 
 /* -------------- tags -------------- */
-.article-tags {
-    margin:10px 0
+
+.article-tag a {
+    display: inline-block;
+    text-decoration: none;
+    font-weight: 400;
+    font-size: 10px;
+    color: #fff;
+    height: 20px;
+    line-height: 20px;
+    float: left;
+    padding: 0 5px 0 10px;
+    position: relative;
+    border-radius: 0 3px 3px 0;
+    margin: 5px 9px 5px 10px;
+    background: #94635c;
 }
-.article-tags a,.article-tags span {
-    display:inline-block;
-    float:left;
-    vertical-align:baseline;
-    height:1.5em;
-    line-height:1.5em;
-    padding:0.2em 0.6em 0.2em 0.6em;
+.article-tag a:before {
+    content: " ";
+    width: 0;
+    height: 0;
+    position: absolute;
+    top: 0;
+    left: -20px;
+    border: 10px solid transparent;
+    border-right-color: #94635c;
 }
-.article-tags span {
-    font-weight:bold;
-    font-size:16px;
-}
-.article-tags a {
-    background:#428BCA;
-    margin-right:5px;
-    border-radius:3px;
-    color:#fff;
-    -webkit-transition:all 0.3s ease-out;
-    -moz-transition:all 0.3s ease-out;
-    -o-transition:all 0.3s ease-out;
-    transition:all 0.3s ease-out;
-}
-.article-tags a:hover {
-    background:#2A6496;
+.article-tag a:after {
+    content: " ";
+    width: 4px;
+    height: 4px;
+    background-color: #fff;
+    border-radius: 4px;
+    box-shadow: 0 0 0 1px rgba(0,0,0,.3);
+    position: absolute;
+    top: 7px;
+    left: 2px;
 }
 
 /* ------------------ detail-pagination ------------------ */
@@ -594,22 +607,22 @@
 /* ------------------ Article pagination ------------------ */
 #Pagination {
     font-size:14px;
-    height:38px;
     width:625px;
     margin:0 auto;
     font-family:宋体,Helvetica,sans-serif;
 }
 /* -------------- num -------------- */
 .pagination-num {
-    height:38px;
     margin:0 auto;
     text-align:center;
     font-size:0;
+  /*  background: url(../images/mao.png)top right no-repeat;
+    padding-top: 20px;*/
 }
 .pagination-num > a, .pagination-num > b {
     height:32px;
     line-height:32px;
-    min-width:36px;
+    min-width:32px;
     padding:2px;
     color:#2953A6;
     white-space:nowrap;
@@ -625,6 +638,9 @@
     border-color:transparent;
     margin-right:10px;
     color:#333;
+}
+.pagination-num .page-previous, .pagination-num .page-next {
+    padding:2px 6px;
 }
 .pagination-num > b.page-previous, .pagination-num > b.page-next {
     color:#999;
@@ -646,11 +662,11 @@
 }
 /* -------------- skip -------------- */
 .pagination-skip {
-    float:left;
     font-size:12px;
     margin-left:5px;
     height:38px;
     line-height:38px;
+    /*padding-top: 20px;*/
 }
 .pagination-skip .skip-text {
     margin:0 2px;
@@ -662,7 +678,7 @@
     line-height:30px;
     width:32px;
 }
-.pagination-skip .skip-btm {
+.pagination-skip .skip-btn {
     height:33px;
     line-height:33px;
     width:50px;
@@ -677,7 +693,32 @@
     -moz-border-radius:2px;
     -webkit-border-radius:2px;
     border-radius:2px;
+    text-align: center;
 }
+#Pagination .pagination-num, #Pagination .pagination-skip {
+    float: left;
+}
+/*
+<div id="Pagination" class="clearfix">
+    <div class="pagination-num">
+        <b class="page-total">共16记录</b>
+        <b class="page-previous">&lt;&lt;上一页</b>
+        <a href="#">1</a>
+        <b class="page-break">...</b>
+        <a href="#">3</a>
+        <b class="page-cur">4</b>
+        <a href="#">5</a>
+        <b class="page-break">...</b>
+        <a href="#">9</a>
+        <a href="#" class="page-next">下一页&gt;&gt;</a>
+    </div>
+    <div class="pagination-skip">
+        <form>
+        共100页，到第<input type="text" name="p" class="skip-text">页<button class="skip-btn" type="submit">跳转</button>
+        </form>
+    </div>
+</div>
+*/
 
 /* ------------------ widget ------------------ */
 .widget {
@@ -692,16 +733,13 @@
     -webkit-border-radius:6px;
     -moz-border-radius:6px;
     border-radius:6px;
-    -webkit-box-sizing:border-box;
-    -moz-box-sizing:border-box;
-    box-sizing:border-box;
+    overflow: hidden;
 }
 .widget .search-panel .search-field {
     position:absolute;
     left:0;
     top:0;
-    height:36px;
-    *height:20px;
+    height:20px;
     border:none;
     background:transparent;
     width:73%;
@@ -722,6 +760,7 @@
     top:-1px;
     height:38px;
     width:27%;
+    background-color: #428BCA;
     -webkit-border-bottom-right-radius:6px;
     -webkit-border-top-right-radius:6px;
     border-bottom-right-radius:6px;
@@ -740,7 +779,7 @@
     font-style:normal;
 }
 /* Widget info */
-.widget ol,.widget ul,.widget .links {
+.widget ol,.widget ul, .widget .links, .widget .tagscloud {
     padding-left:30px;
 }
 .widget ol {
@@ -759,32 +798,19 @@
 }
 .widget a {
     color:#428BCA;
+    font-size:14px;
     overflow:hidden;
     white-space:nowrap;
 }
 .widget a:hover {
     color:#2A6496;
-    /*text-decoration:underline;*/
+    /*text-decoration:underline;
+    */
 }
 /*Links*/
-.widget-links a {
-    float:left;
-    margin:0 15px 5px 0;
-}
-/* TagsCloud */
-.widget-tagscloud .tagscloud {
-    padding-left:30px;
-    margin:0 auto;
-    height:220px;
-    position:relative;
-    color:#fff;
-}
-.tagscloud a {
-    text-align:center;
-    padding:5px;
-    width:auto;
+.widget-links a, .tagscloud a {
     display:inline-block;
-    border-radius:3px;
+    margin:0 15px 5px 0;
 }
 
 /* ------------------ footer ------------------ */
@@ -844,4 +870,83 @@
     .pagination-num .page-previous, .pagination-num .page-next, .pagination-num .page-cur, .pagination-num .page-total {
         display:inline-block;
     }
+}
+
+
+/* This is a compiled file, you should be editing the file in the templates directory */
+.pace {
+  -webkit-pointer-events: none;
+  pointer-events: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+}
+
+.pace-inactive {
+  display: none;
+}
+
+.pace .pace-progress {
+  background: #ee3148;
+  position: fixed;
+  z-index: 2000000;
+  top: 0;
+  right: 100%;
+  width: 100%;
+  height: 2px;
+}
+
+.pace .pace-progress-inner {
+  display: block;
+  position: absolute;
+  right: 0px;
+  width: 100px;
+  height: 100%;
+  box-shadow: 0 0 10px #ee3148, 0 0 5px #ee3148;
+  opacity: 1.0;
+  -webkit-transform: rotate(3deg) translate(0px, -4px);
+  -moz-transform: rotate(3deg) translate(0px, -4px);
+  -ms-transform: rotate(3deg) translate(0px, -4px);
+  -o-transform: rotate(3deg) translate(0px, -4px);
+  transform: rotate(3deg) translate(0px, -4px);
+}
+
+.pace .pace-activity {
+  display: block;
+  position: fixed;
+  z-index: 2000000;
+  top: 15px;
+  right: 15px;
+  width: 14px;
+  height: 14px;
+  border: solid 2px transparent;
+  border-top-color: #ee3148;
+  border-left-color: #ee3148;
+  border-radius: 10px;
+  -webkit-animation: pace-spinner 400ms linear infinite;
+  -moz-animation: pace-spinner 400ms linear infinite;
+  -ms-animation: pace-spinner 400ms linear infinite;
+  -o-animation: pace-spinner 400ms linear infinite;
+  animation: pace-spinner 400ms linear infinite;
+}
+
+@-webkit-keyframes pace-spinner {
+  0% { -webkit-transform: rotate(0deg); transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); transform: rotate(360deg); }
+}
+@-moz-keyframes pace-spinner {
+  0% { -moz-transform: rotate(0deg); transform: rotate(0deg); }
+  100% { -moz-transform: rotate(360deg); transform: rotate(360deg); }
+}
+@-o-keyframes pace-spinner {
+  0% { -o-transform: rotate(0deg); transform: rotate(0deg); }
+  100% { -o-transform: rotate(360deg); transform: rotate(360deg); }
+}
+@-ms-keyframes pace-spinner {
+  0% { -ms-transform: rotate(0deg); transform: rotate(0deg); }
+  100% { -ms-transform: rotate(360deg); transform: rotate(360deg); }
+}
+@keyframes pace-spinner {
+  0% { transform: rotate(0deg); transform: rotate(0deg); }
+  100% { transform: rotate(360deg); transform: rotate(360deg); }
 }

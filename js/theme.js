@@ -220,6 +220,10 @@ function setTagsCloud() {
 
     var oTag=null;
     oDiv=document.getElementById('TagsCloud');
+    oDiv.style.margin = '0 auto';
+    oDiv.style.height = '220px';
+    oDiv.style.position = 'relative';
+    oDiv.style.textAlign = 'center';
     aA=oDiv.getElementsByTagName('a');
     for(var i=0; i<aA.length; i++) {
         oTag={};
@@ -315,9 +319,14 @@ function setTagsCloud() {
             mcList[i].cy = radius * Math.sin(theta) * Math.sin(phi);
             mcList[i].cz = radius * Math.cos(phi);
 
+            aA[i].style.position = 'absolute';
             aA[i].style.left = mcList[i].cx + oDiv.offsetWidth / 2 - mcList[i].offsetWidth / 2 + 'px';
             aA[i].style.top = mcList[i].cy + oDiv.offsetHeight / 2 - mcList[i].offsetHeight / 2 + 'px';
             aA[i].style.backgroundColor = setColor();
+            aA[i].style.color = '#ffffff';
+            aA[i].style.padding = '5px';
+            aA[i].style.borderRadius = '3px';
+            aA[i].style.margin = '0';
         }
     }
     function doPosition() {
@@ -366,4 +375,4 @@ function setTagsCloud() {
 
 addEvent(window, 'load', mobiNav);
 addEvent(window, 'load', setHeader);
-addEvent(window, 'load', setTagsCloud);
+// addEvent(window, 'load', setTagsCloud);
